@@ -1,0 +1,75 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<html>
+   <body>
+      <nav class="navbar navbar-default" style="background-color:transparent; border:none;">
+         <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+               <ul class="nav navbar-nav navbar-right nav_bar1" style = "visibility: visible;">
+                  <li><a> <%= button_to "Profile", current_user, :id => "open-contacts-dialog-btn",
+                     :class => "inbox-sf-add-btn tip inner3 follow-button btn1 btn-info", :method => :get %> </a></li>
+                  <li><a> <%= button_to "Log Out", destroy_user_session_path , :id => "open-contacts-dialog-btn",:class => "inbox-sf-add-btn tip follow-button btn-info btn1", :method => :delete %></a></li>
+                  <li><a > 
+                     <%= button_to "Create Post", new_post_path, :id => "open-contacts-dialog-btn",
+                        :class => "inbox-sf-add-btn tip  follow-button btn1 btn-info", :method => :get %></a>
+                  </li>
+                  <li><a>
+                     <%= form_tag post_search_path, :method => :post, :id => "SearchForm" do %>
+                     <%= text_field_tag :search, params[:search], placeholder: 'Search Blog.....', :autocomplete => :off, :id => 'SearchSearch'  %> 
+                     <%#= image_submit_tag('nav_bar/search.png', title: 'Search', class: 'search_submit', data: { "placement" => "bottom" }) %>
+                     <% end %>   </a>
+                  </li>
+               </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+         </div>
+         <!-- /.container-fluid -->
+      </nav>
+      <div>
+      <div id="search-results">
+         <%= render :partial => "search", :locals => {posts: @posts} %>
+      </div>
+   </body>
+</html>
+
+
+
+<script type="text/javascript">
+    $("#SearchSearch").unbind();
+    $("#SearchSearch").bind("keyup keypress", function(e) {
+        console.log("i am here");
+        //$("#SearchSearch").addClass("loading"); // show the spinner
+        var form = $("#SearchForm"); // grab the form wrapping the search bar.
+        console.log(form);
+        var url = "/posts/search"; // live_search action.   
+        var formData = form.serialize(); // grab the data in the form   
+        var searching = $('#SearchSearch').val();
+
+        if (e.keyCode == 13) {
+            return false;
+        }
+
+        console.log(searching);
+        $.ajax({
+            url: url,
+            type: "POST",
+            dataType: "script",
+            data: {
+                searching // grab the data in the form   
+
+            },
+            success: function(data) {
+                console.log("success")
+
+            },
+            error: function(error) {
+                console.log("error")
+            }
+        });
+
+    });
+</script>
+
+  
+
+
+

@@ -1,0 +1,22 @@
+<div class="container">
+   <center>
+      <h3 class= "pro"> Read Among <%= posts.count %> Blogs..... :)</h3>
+   </center>
+   <% posts.each do |d| %>
+   <center>
+      <td>
+         <ol class="posts">
+            <%= image_tag d.user.images.url(:medium), :class => "style_image img-circle"  %>
+            <h3>  <%= d.user.name %> </h3>
+            <h4>   <%= d.content %> </h4>
+         </ol>
+      </td>
+   </center>
+   <% end %>
+   <center>
+      <%= will_paginate posts %>
+   </center>
+</div>
+ 
+
+  

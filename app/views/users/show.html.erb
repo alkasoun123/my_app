@@ -1,0 +1,29 @@
+<div class="container">
+   <div class="span3 well">
+      <center>
+         <h3 class= "pro"> Happy Blogging <%= @user.name %> !!</h3>
+         <a>
+         <%= image_tag @user.images.url(:medium), :class => "style_image img-circle" %>
+         </a>
+      </center>
+      <div id="outer">
+         <%= button_to "Log Out", destroy_user_session_path , :id => "open-contacts-dialog-btn",
+            :class => "inbox-sf-add-btn tip inner1 follow-button btn-info btn1", :method => :delete %>
+         <%= button_to "All_post", posts_path, :id => "open-contacts-dialog-btn",
+            :class => "inbox-sf-add-btn tip inner2 follow-button btn1 btn-info", :method => :get %>
+         <%= button_to "Create Post", new_post_path, :id => "open-contacts-dialog-btn",
+            :class => "inbox-sf-add-btn tip inner3 follow-button btn1 btn-info", :method => :get %>
+      </div>
+   </div>
+</div>
+<div class="col-md-8">
+   <% if @user.posts.any? %>
+   <h3>Posts (<%= @user.posts.count %>)</h3>
+   <ol class="posts">
+      <%= render @posts %>
+   </ol>
+   <%= will_paginate @posts %>
+   <% end %>
+</div>
+</div>
+

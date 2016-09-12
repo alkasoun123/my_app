@@ -1,0 +1,42 @@
+<html>
+   <body>
+      <nav class="navbar navbar-default" style="background-color:transparent; border:none;">
+         <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+               <ul class="nav navbar-nav navbar-right nav_bar1" style = "visibility: visible;">
+                  <li><a> <%= button_to "Log Out", destroy_user_session_path , :id => "open-contacts-dialog-btn",:class => "inbox-sf-add-btn tip follow-button btn-info btn1", :method => :delete %></a></li>
+                  <li><a > 
+                     <%= button_to "All_post", posts_path, :id => "open-contacts-dialog-btn",
+                        :class => "inbox-sf-add-btn tip  follow-button btn1 btn-info", :method => :get %></a>
+                  </li>
+                  <li><a>
+                     <%= button_to "Profile", current_user, :id => "open-contacts-dialog-btn",
+                        :class => "inbox-sf-add-btn tip inner3 follow-button btn1 btn-info", :method => :get %> 
+                     </a>
+                  </li>
+               </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+         </div>
+         <!-- /.container-fluid -->
+      </nav>
+      <div>
+         <div id="search-results">
+            <div class="container">
+               <div class="span3 well">
+                  <center>
+                     <h3 class = "create">Create your Blog :) </h3>
+                     <%= form_for @post, :as => :post,method: :Post, :url => posts_path(@post) do |f| %>
+                     <div class="form-group">
+                        <%= f.text_area :content ,  :class => 'text_field_size'%>
+                     </div>
+                     <%= f.submit "Create ", class: "follow-button btn btn-info" %>
+                     <% end %>
+               </div>
+               </center>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
+

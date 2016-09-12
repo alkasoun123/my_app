@@ -1,0 +1,13 @@
+<%= form_for @startup, :as => :startup,method: :Post, :url => startup_index_path(@startup), html: { multipart: true } do |f| %>
+    
+      <%= f.label :name %>
+      <%= f.text_field :name  %>
+    
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+
+      <%= f.submit "Create ", class: "btn btn-primary" %>
+    <% end %>
+<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+<%= link_to 'complete your profile', destroy_user_session_path, method: :delete %>
+<%= link_to 'your profile', destroy_user_session_path, method: :delete %>

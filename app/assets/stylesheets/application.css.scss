@@ -1,0 +1,507 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+.posts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+
+
+.card {
+    padding-top: 20px;
+    margin: 10px 0 20px 0;
+    background-color: rgba(214, 224, 226, 0.2);
+    border-top-width: 0;
+    border-bottom-width: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.card .card-heading {
+    padding: 0 20px;
+    margin: 0;
+}
+
+.card .card-heading.simple {
+    font-size: 20px;
+    font-weight: 300;
+    color: #777;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.card .card-heading.image img {
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    margin-right: 15px;
+    vertical-align: top;
+    border: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.card .card-heading.image .card-heading-header {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card .card-heading.image .card-heading-header h3 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: #262626;
+}
+
+.card .card-heading.image .card-heading-header span {
+    font-size: 12px;
+    color: #999999;
+}
+
+.card .card-body {
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.card .card-media {
+    padding: 0 20px;
+    margin: 0 -14px;
+}
+
+.card .card-media img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card .card-actions {
+    min-height: 30px;
+    padding: 0 20px 20px 20px;
+    margin: 20px 0 0 0;
+}
+
+.card .card-comments {
+    padding: 20px;
+    margin: 0;
+    background-color: #f8f8f8;
+}
+
+.card .card-comments .comments-collapse-toggle {
+    padding: 0;
+    margin: 0 20px 12px 20px;
+}
+
+.card .card-comments .comments-collapse-toggle a,
+.card .card-comments .comments-collapse-toggle span {
+    padding-right: 5px;
+    overflow: hidden;
+    font-size: 12px;
+    color: #999;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-comments .media-heading {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.card.people {
+    position: relative;
+    display: inline-block;
+    width: 170px;
+    height: 300px;
+    padding-top: 0;
+    margin-left: 20px;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.card.people:first-child {
+    margin-left: 0;
+}
+
+.card.people .card-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 170px;
+    height: 150px;
+    background-color: #ffffff;
+}
+
+.card.people .card-top.green {
+    background-color: #53a93f;
+}
+
+.card.people .card-top.blue {
+    background-color: #427fed;
+}
+
+.card.people .card-info {
+    position: absolute;
+    top: 150px;
+    display: inline-block;
+    width: 100%;
+    height: 101px;
+    overflow: hidden;
+    background: #ffffff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.card.people .card-info .title {
+    display: block;
+    margin: 8px 14px 0 14px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #404040;
+}
+
+.card.people .card-info .desc {
+    display: block;
+    margin: 8px 14px 0 14px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 16px;
+    color: #737373;
+    text-overflow: ellipsis;
+}
+
+.card.people .card-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px;
+    line-height: 29px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.card.hovercard {
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgba(214, 224, 226, 0.2);
+}
+
+.card.hovercard .cardheader {
+    background: url("http://lorempixel.com/850/280/nature/4/");
+    background-size: cover;
+    height: 135px;
+}
+
+.card.hovercard .avatar {
+    position: relative;
+    top: -50px;
+    margin-bottom: -50px;
+}
+
+.card.hovercard .avatar img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.5);
+}
+
+.card.hovercard .info {
+    padding: 4px 8px 10px;
+}
+
+.card.hovercard .info .title {
+    margin-bottom: 4px;
+    font-size: 24px;
+    line-height: 1;
+    color: #262626;
+    vertical-align: middle;
+}
+
+.card.hovercard .info .desc {
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 20px;
+    color: #737373;
+    text-overflow: ellipsis;
+}
+
+.card.hovercard .bottom {
+    padding: 0 20px;
+    margin-bottom: 17px;
+}
+
+.btn{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }
+
+
+*{margin: 0px; padding: 0px;list-style: none;text-decoration: none;}
+.clr {clear: both;}
+.clearfix:after {content: " "; /* Older browser do not support empty content */
+   visibility: hidden; display: block; height: 0; clear: both;}
+.clearfix:after {content: ""; display: table; clear: both; }
+.btn{padding: 25px;margin-top: 10px;
+  
+  height: 50px;
+  width: 145px;background-color: transparent; border: 3px solid #000;}
+body{ font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;}
+  .men{position: relative;}
+  .men > h1 {position: absolute;top:50px; left:50px;}
+.img{background: url(/image/first.png) no-repeat center center;background-size: cover;width: 100%;height:100vh}
+.navbar-default .navbar-nav>li>a {color:white;}
+.jumbotron .navbar-default .navbar-nav>li>a {color: #FFFFFF; font-size: 16px; font-weight: 300; letter-spacing: 1.2px; text-transform: uppercase; }
+.jumbotron p {margin-bottom: 15px;font-size: 21px;font-weight: 200;margin: 0 auto;}
+ .text img{position: relative; outline: solid #fff 4px;outline-offset: -20px;}
+.imgborder{position: absolute;margin-left: 10px; font-size: 20px;color: white;left: 25%;top: 192px;right: 60px;font-size: 40px;font-style: italic;}
+.sliderText{ width: 1280px;  text-align: center; display: table-cell; padding:65px; padding-top:165px;margin: 0px auto;}
+.sliderText > p {color: red; text-transform: uppercase;  text-align: center; font-size: 5px; 
+    padding: 10px 0px 0px 0px; font-weight: bolder;}
+.sliderText > span{color: #ffffff; text-align: center; text-transform: uppercase; font-size: 24px; font-weight:lighter; }
+.jumbotron .sliderText > h1 { color: #ffffff; }
+.btn-white{background-color: Transparent; border-style:none;border:3px solid white;height: 50px;width:145px;
+ font-size: 17px; color:white;font-weight: 200px;}
+ .products{background-color: white;}
+ .prouct-container{max-width: 700px;margin: 0 auto;}
+ .lineredupper {width: 200px;border: 1px solid red;margin: 0 auto;}
+ .linereddown {width: 200px;border: 1px solid red;margin: 0 auto;line-height: 2;  margin-bottom: 25px;}
+ .product-container div h4 {
+  text-align: center;
+  line-height: 1;
+  color: #333333;
+  height: 50px;
+font-weight: normal;
+  font-size: 40px;
+}
+.col-lg-4{outline: solid #fff 2.5px;outline-offset: -30px;}
+
+ .imageDiscount{position: relative;}
+
+.image{ position: absolute; top:25%; border-top: 2px solid #fff; border-bottom: 2px solid #fff; left: 10% ; 
+    text-align: center; font-size: 45px; color: white; font-weight: bold;}
+
+ 
+ .carousel-caption h1{margin: 0 auto;;}
+.col-lg-6 {
+  width: 50%;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+
+
+.Trendingcolor{background: url(../img/trend-bg.jpg) no-repeat center center;
+ padding-top: 20px; width: 100%; background-size: cover; position: relative;}
+
+.Trending{background-color: white;}
+.Trending-container{max-width: 700px;margin: 0 auto;}
+.lineredupper {width: 200px;border: 1px solid red;margin: 0 auto;margin-top: 30px;}
+.linereddown {width: 200px;border: 1px solid red;margin: 0 auto;line-height: 2;  margin-bottom: 25px;}
+.Trending-container div h4 {
+  text-align: center;
+  line-height: 1;
+  color: #333333;
+  height: 50px;
+font-weight: normal;
+  font-size: 40px;
+}
+.container {
+  width: 1170px;
+}
+.para>p {  color: #808080;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+  font-size: 17px;
+  line-height: 1.5;}
+.Nathanline{width: 30px;border: 1px solid black;margin-bottom: 10px;}
+.col-lg-6> h3{font-size: 30px;color: red;line-height: 1;text-transform: uppercase;font-weight: bold;}
+.col-lg-6> h4{line-height: 2.5;color: #808080;letter-spacing: 1px;}
+.col-lg-6> p{color: #808080;letter-spacing: 0.5px;margin: 0 0 10px;font-size:17px;line-height: 1;}
+.lineGerman{width: 550px;border: 1px solid #F4F4F4;}
+.figcaption{color: red;font-size: 40px;font-weight: bold;}
+.size > li{float: left; margin: 10px 10px 30px 0px; }
+.size > li  a{background-color: transparent; padding: 10px 8px; border:2px solid #333333; color: #333333}
+.size > li  a:hover{background-color: #333333; padding: 10px 8px; border:2px solid #333333; color: #fff; text-decoration: none;}
+ 
+ #email{background-color: transparent; padding: 10px 8px; border:2px solid #ffffff; color: #fff}
+#sub{background-color: white; padding: 10px 8px; border:2px solid #ffffff; color: #000}
+.contact { background: url(../img/subcribe-bg.jpg) no-repeat center center; padding-top: 20px; width: 100%; background-size: cover; position: relative; height: 250px;}
+.row .col-lg-3 {
+  width: 20%;
+}
+
+.footer {
+  padding: 68px 0;
+  line-height: 24px;
+  color: rgba(51,51,51,.6);
+  letter-spacing: 1px;
+}
+.footer__text {
+  text-align: center;
+}
+.footer i{color: red;} 
+
+.follow-button{
+     background: transparent;
+     border: 1px solid #e8e8e8;
+     display: block;
+      background: #0089d1;
+      color: white;
+      font-weight: 400;
+      font-size: 1.4em; //font size does not change
+      display: block;
+      padding: 0px 4px 8px 23px;; //modification doesn't show..
+      text-decoration: none;
+      
+        color: rgb(229, 246, 255);
+        background: #0089d1;
+        border-radius: 24px;
+        background: #33a6cc;
+box-shadow: none;
+margin-bottom: -3px;
+margin-top: 3px;
+      
+  }
+
+
+.text{border-radius: 24px;}
+
+
+.btn{height: 40px;
+width: 111px;}
+
+
+
+.style_image{width: 140;  height: 140; border:0;}
+
+
+
+.inner1
+{   float: right; width: 20px;
+    display: inline;
+    margin-right: 308px;
+}
+
+.inner2
+{   float: left; width: 220px;
+    margin-left: 305px;
+    display: inline;
+}
+
+.inner3
+{  float: left; width: 240px;
+    display: inline;
+}
+
+.text_field_size{
+     width: 600px;
+     height: 250px;
+     margin-top: 27px;
+
+}
+
+.create{
+    font-size: 52px;
+    color: #1A9DAE;
+}
+
+
+.create_new_post{
+height: 58px;
+width: 200px;
+}
+
+.btn1{
+    height: 52px;
+width: 161px;
+}
+
+.pro{
+    color: #7D0541;
+    font-size: 42px;
+    margin-top: -15px;
+}
+
+
+
+
+#SearchSearch{
+    float: right;
+    padding: 4px;
+    color: #900C3F;
+     padding: 13px;
+
+}

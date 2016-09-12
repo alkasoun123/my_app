@@ -1,0 +1,11 @@
+<p>
+  <strong>Name:</strong>
+  <%= @startup.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+ <%= image_tag @startup.image.url(:medium) %>
+</p>
+
+<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
