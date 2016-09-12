@@ -27,9 +27,7 @@ Rails.application.routes.draw do
   post '/posts/search'  =>  'posts#search', as: :post_search
 
   #match 'search(/:search)', :to => 'posts#search', :as => :search, via: [:get, :post]
-  resources :posts do
-    resources :comments, :only => [:create]
-  end
+ 
 
   resources :startup
   
