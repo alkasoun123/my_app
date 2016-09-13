@@ -4,8 +4,8 @@ class Post < ActiveRecord::Base
   validates :content, presence: true, length: { maximum: 140 }
 
   def self.search(searching)
-	  where("name LIKE ?", "%#{searching}%") 
-	  where("content LIKE ?", "%#{searching}%")
+	  @search = where("content LIKE ?", "%#{searching}%")
+	  return @search
   end
 
 end

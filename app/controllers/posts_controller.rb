@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 protect_from_forgery :except => [:search]  
   def index
     @posts = Post.all.reorder("created_at DESC").paginate(page: params[:page])
-    @filter = "present"
   end
 
   def create
@@ -24,7 +23,6 @@ protect_from_forgery :except => [:search]
   def search      
     @filter = "search"
     @posts = Post.search(params[:searching]).reorder("created_at DESC").paginate(page: params[:page])
-    p @posts
     respond_to do |format|
     format.js 
     format.html    
