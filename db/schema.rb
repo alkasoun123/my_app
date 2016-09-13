@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160912130729) do
+ActiveRecord::Schema.define(version: 20160912133439) do
 
   create_table "apllications", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160912130729) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.string   "title",      limit: 255
+    t.string   "subject",    limit: 255
   end
 
   add_index "posts", ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at", using: :btree
